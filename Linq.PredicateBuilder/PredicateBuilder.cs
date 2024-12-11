@@ -6,7 +6,7 @@ public static class PredicateBuilder
 {
     public static Expression<Func<T, bool>> True<T>() => x => true;
 
-    public static Expression<Func<T, bool>> False<T>() => x => true;
+    public static Expression<Func<T, bool>> False<T>() => x => false;
 
     public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
         => MergeExpression(Expression.AndAlso, left, right);
